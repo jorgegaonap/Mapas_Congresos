@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_70efe7bcc35bc7066ca08bc9c56523fb {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_70efe7bcc35bc7066ca08bc9c56523fb" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_70efe7bcc35bc7066ca08bc9c56523fb = L.map(
+                "map_70efe7bcc35bc7066ca08bc9c56523fb",
+                {
+                    center: [-21.14776394068406, -69.13561228740312],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 3,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_872c12bc3787cd57b80e2b6141674333 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_70efe7bcc35bc7066ca08bc9c56523fb);
+        
+    
+            var feature_group_17c13aeb776a56bea220e95b66d521c1 = L.featureGroup(
+                {}
+            ).addTo(map_70efe7bcc35bc7066ca08bc9c56523fb);
+        
+    
+            var feature_group_4c67d2c9117ab992eafd588e2b73dd82 = L.featureGroup(
+                {}
+            ).addTo(map_70efe7bcc35bc7066ca08bc9c56523fb);
+        
+    
+            var feature_group_bd2ffccaaef173f28cfdd79024453809 = L.featureGroup(
+                {}
+            ).addTo(map_70efe7bcc35bc7066ca08bc9c56523fb);
+        
+    
+            var feature_group_6e59918e90d0abb2a7d0a4eb25c6ef38 = L.featureGroup(
+                {}
+            ).addTo(map_70efe7bcc35bc7066ca08bc9c56523fb);
+        
+    
+            var marker_073ff769e3cfa5765f94c691bee98636 = L.marker(
+                [-36.82746554986961, -73.03521887301187],
+                {}
+            ).addTo(feature_group_6e59918e90d0abb2a7d0a4eb25c6ef38);
+        
+    
+        var custom_icon_637ed2d146b0a32ad3c67f147ea96a44 = L.icon({"iconSize": [25, 25], "iconUrl": "data:image/png;base64,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"});
+        marker_073ff769e3cfa5765f94c691bee98636.setIcon(custom_icon_637ed2d146b0a32ad3c67f147ea96a44);
+        
+    
+        var popup_3dea5721748d1eaefb05bf7804a3ff42 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3d3f51da82203f07042ad1624b80c820 = $(`<div id="html_3d3f51da82203f07042ad1624b80c820" style="width: 100.0%; height: 100.0%;"><a href="https://www.jmzs.cl/2023/" target="_blank">XXXV Jornada de Matemática de la Zona Sur</a><br>19 al 21 de abril de 2023<br><br>Lugar: Universidad de Concepción</div>`)[0];
+                popup_3dea5721748d1eaefb05bf7804a3ff42.setContent(html_3d3f51da82203f07042ad1624b80c820);
+            
+        
+
+        marker_073ff769e3cfa5765f94c691bee98636.bindPopup(popup_3dea5721748d1eaefb05bf7804a3ff42)
+        ;
+
+        
+    
+    
+            var feature_group_ec1656f4ca5ae2ee65cd5f3cd5ff6fc4 = L.featureGroup(
+                {}
+            ).addTo(map_70efe7bcc35bc7066ca08bc9c56523fb);
+        
+    
+            var feature_group_ddee4d7c23e1165a0798557d5025228e = L.featureGroup(
+                {}
+            ).addTo(map_70efe7bcc35bc7066ca08bc9c56523fb);
+        
+    
+            var feature_group_57d8bf7b97ff4df98f9b684205e41a24 = L.featureGroup(
+                {}
+            ).addTo(map_70efe7bcc35bc7066ca08bc9c56523fb);
+        
+    
+            var marker_ceb5ccd6266a25f35ee076e80b9a23fd = L.marker(
+                [-12.080960493678488, -76.97020963922843],
+                {}
+            ).addTo(feature_group_57d8bf7b97ff4df98f9b684205e41a24);
+        
+    
+        var custom_icon_a216c1c95d27c91a7f25128fb43b388d = L.icon({"iconSize": [25, 25], "iconUrl": "data:image/png;base64,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"});
+        marker_ceb5ccd6266a25f35ee076e80b9a23fd.setIcon(custom_icon_a216c1c95d27c91a7f25128fb43b388d);
+        
+    
+        var popup_1b46fab2a43f05f10b8d1bb44d36e650 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fd1755aae7a61996718494f960329c78 = $(`<div id="html_fd1755aae7a61996718494f960329c78" style="width: 100.0%; height: 100.0%;"><a href="https://xvi.ciaem-iacme.org/" target="_blank">XVI Conferencia Interamericana de Educación Matemática</a><br>30 de julio al 04 de agosto de 2023<br><br>Lugar: Universidad de Lima</div>`)[0];
+                popup_1b46fab2a43f05f10b8d1bb44d36e650.setContent(html_fd1755aae7a61996718494f960329c78);
+            
+        
+
+        marker_ceb5ccd6266a25f35ee076e80b9a23fd.bindPopup(popup_1b46fab2a43f05f10b8d1bb44d36e650)
+        ;
+
+        
+    
+    
+            var marker_65a01f13accf8dd07f201d244caf82aa = L.marker(
+                [19.323054038224562, -99.18655594358597],
+                {}
+            ).addTo(feature_group_57d8bf7b97ff4df98f9b684205e41a24);
+        
+    
+        var custom_icon_b508a22018ed9e4773072d0310b73106 = L.icon({"iconSize": [25, 25], "iconUrl": "data:image/png;base64,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"});
+        marker_65a01f13accf8dd07f201d244caf82aa.setIcon(custom_icon_b508a22018ed9e4773072d0310b73106);
+        
+    
+        var popup_cb24f4d75a1a04f74e2f294af8ce51d6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_197abfa7bc106baad2ff82fe72cf7130 = $(`<div id="html_197abfa7bc106baad2ff82fe72cf7130" style="width: 100.0%; height: 100.0%;"><a href="https://clame-relme.org/" target="_blank">36 Reunión Latinoamericana de Matemática Educativa</a><br>24 al 28 de julio de 2023<br><br>Lugar: Universidad Autónoma de México</div>`)[0];
+                popup_cb24f4d75a1a04f74e2f294af8ce51d6.setContent(html_197abfa7bc106baad2ff82fe72cf7130);
+            
+        
+
+        marker_65a01f13accf8dd07f201d244caf82aa.bindPopup(popup_cb24f4d75a1a04f74e2f294af8ce51d6)
+        ;
+
+        
+    
+    
+            var feature_group_1b9d73bd0145d6c0d3dcdcbfa2e0a5b4 = L.featureGroup(
+                {}
+            ).addTo(map_70efe7bcc35bc7066ca08bc9c56523fb);
+        
+    
+            var marker_7610a975de0123846d7f8c8ad7123843 = L.marker(
+                [-12.080960493678488, -76.97020963922843],
+                {}
+            ).addTo(feature_group_1b9d73bd0145d6c0d3dcdcbfa2e0a5b4);
+        
+    
+        var custom_icon_531bf2a2de1cd0162dd560e2bfa7abd1 = L.icon({"iconSize": [25, 25], "iconUrl": "data:image/png;base64,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"});
+        marker_7610a975de0123846d7f8c8ad7123843.setIcon(custom_icon_531bf2a2de1cd0162dd560e2bfa7abd1);
+        
+    
+        var popup_6e4ffc3b600ace14b616669d33774814 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d30dd25d226888373fc49dba5d7391b8 = $(`<div id="html_d30dd25d226888373fc49dba5d7391b8" style="width: 100.0%; height: 100.0%;"><a href="https://xvi.ciaem-iacme.org/" target="_blank">XVI Conferencia Interamericana de Educación Matemática</a><br>30 de julio al 04 de agosto de 2023<br><br>Lugar: Universidad de Lima</div>`)[0];
+                popup_6e4ffc3b600ace14b616669d33774814.setContent(html_d30dd25d226888373fc49dba5d7391b8);
+            
+        
+
+        marker_7610a975de0123846d7f8c8ad7123843.bindPopup(popup_6e4ffc3b600ace14b616669d33774814)
+        ;
+
+        
+    
+    
+            var marker_faa1aa38392a366ddb3f71aa466dacd8 = L.marker(
+                [-33.466387126989105, -70.65716930736052],
+                {}
+            ).addTo(feature_group_1b9d73bd0145d6c0d3dcdcbfa2e0a5b4);
+        
+    
+        var custom_icon_8b4ea47fab05a5de4d16583ad7d8a97a = L.icon({"iconSize": [25, 25], "iconUrl": "data:image/png;base64,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"});
+        marker_faa1aa38392a366ddb3f71aa466dacd8.setIcon(custom_icon_8b4ea47fab05a5de4d16583ad7d8a97a);
+        
+    
+        var popup_bf883788b51725b138e3d21160f03a61 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3dddad4e2d4d77d6cfd47614bfdf12fa = $(`<div id="html_3dddad4e2d4d77d6cfd47614bfdf12fa" style="width: 100.0%; height: 100.0%;"><a href="http://ima.ucv.cl/congreso/jornada-anual-myt-en-em/" target="_blank">Jornada anual de Modelación y Tecnología en Educación Matemática</a><br>31 de agosto al 01 de septiembre de 2023<br><br>Lugar: Universidad Bernardo O'Higgins</div>`)[0];
+                popup_bf883788b51725b138e3d21160f03a61.setContent(html_3dddad4e2d4d77d6cfd47614bfdf12fa);
+            
+        
+
+        marker_faa1aa38392a366ddb3f71aa466dacd8.bindPopup(popup_bf883788b51725b138e3d21160f03a61)
+        ;
+
+        
+    
+    
+            var feature_group_2822120b458c3f72d4423aa0a0fad261 = L.featureGroup(
+                {}
+            ).addTo(map_70efe7bcc35bc7066ca08bc9c56523fb);
+        
+    
+            var marker_83c21f4eb492744abe06ff518987f6ef = L.marker(
+                [-33.466387126989105, -70.65716930736052],
+                {}
+            ).addTo(feature_group_2822120b458c3f72d4423aa0a0fad261);
+        
+    
+        var custom_icon_861bd35d06200f095936bd9f973dc8b9 = L.icon({"iconSize": [25, 25], "iconUrl": "data:image/png;base64,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"});
+        marker_83c21f4eb492744abe06ff518987f6ef.setIcon(custom_icon_861bd35d06200f095936bd9f973dc8b9);
+        
+    
+        var popup_983793185a0f68f5ff0b249160b3db09 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a3b6f0ebcb0d3518cb84f9ba00f4c372 = $(`<div id="html_a3b6f0ebcb0d3518cb84f9ba00f4c372" style="width: 100.0%; height: 100.0%;"><a href="http://ima.ucv.cl/congreso/jornada-anual-myt-en-em/" target="_blank">Jornada anual de Modelación y Tecnología en Educación Matemática</a><br>31 de agosto al 01 de septiembre de 2023<br><br>Lugar: Universidad Bernardo O'Higgins</div>`)[0];
+                popup_983793185a0f68f5ff0b249160b3db09.setContent(html_a3b6f0ebcb0d3518cb84f9ba00f4c372);
+            
+        
+
+        marker_83c21f4eb492744abe06ff518987f6ef.bindPopup(popup_983793185a0f68f5ff0b249160b3db09)
+        ;
+
+        
+    
+    
+            var feature_group_544f67e69a4feee79fb37c0073d9e27a = L.featureGroup(
+                {}
+            ).addTo(map_70efe7bcc35bc7066ca08bc9c56523fb);
+        
+    
+            var feature_group_8183923e7fa57649b9cbbb0b6422c1a5 = L.featureGroup(
+                {}
+            ).addTo(map_70efe7bcc35bc7066ca08bc9c56523fb);
+        
+    
+            var feature_group_5f5951180471ad70a7bc85c78236347a = L.featureGroup(
+                {}
+            ).addTo(map_70efe7bcc35bc7066ca08bc9c56523fb);
+        
+    
+            var layer_control_2a6aad1254b1f7ba88b29edeb86f15c1 = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_872c12bc3787cd57b80e2b6141674333,
+                },
+                overlays :  {
+                    "enero" : feature_group_17c13aeb776a56bea220e95b66d521c1,
+                    "febrero" : feature_group_4c67d2c9117ab992eafd588e2b73dd82,
+                    "marzo" : feature_group_bd2ffccaaef173f28cfdd79024453809,
+                    "abril" : feature_group_6e59918e90d0abb2a7d0a4eb25c6ef38,
+                    "mayo" : feature_group_ec1656f4ca5ae2ee65cd5f3cd5ff6fc4,
+                    "junio" : feature_group_ddee4d7c23e1165a0798557d5025228e,
+                    "julio" : feature_group_57d8bf7b97ff4df98f9b684205e41a24,
+                    "agosto" : feature_group_1b9d73bd0145d6c0d3dcdcbfa2e0a5b4,
+                    "septiembre" : feature_group_2822120b458c3f72d4423aa0a0fad261,
+                    "octubre" : feature_group_544f67e69a4feee79fb37c0073d9e27a,
+                    "noviembre" : feature_group_8183923e7fa57649b9cbbb0b6422c1a5,
+                    "diciembre" : feature_group_5f5951180471ad70a7bc85c78236347a,
+                },
+            };
+            L.control.layers(
+                layer_control_2a6aad1254b1f7ba88b29edeb86f15c1.base_layers,
+                layer_control_2a6aad1254b1f7ba88b29edeb86f15c1.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_70efe7bcc35bc7066ca08bc9c56523fb);
+        
+</script>
+</html>
